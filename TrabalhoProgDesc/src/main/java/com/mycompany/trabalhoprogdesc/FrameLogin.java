@@ -4,6 +4,9 @@
  */
 package com.mycompany.trabalhoprogdesc;
 
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author aluno
@@ -29,9 +32,9 @@ public class FrameLogin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        tfUsuario = new javax.swing.JTextField();
+        tfSenha = new javax.swing.JTextField();
+        btEntrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,7 +47,18 @@ public class FrameLogin extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Usuário:");
 
-        jButton1.setText("Entrar");
+        tfUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfUsuarioActionPerformed(evt);
+            }
+        });
+
+        btEntrar.setText("Entrar");
+        btEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEntrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -53,7 +67,7 @@ public class FrameLogin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(169, 169, 169)
@@ -64,13 +78,13 @@ public class FrameLogin extends javax.swing.JFrame {
                                         .addGap(4, 4, 4))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(108, 108, 108)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(tfUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(138, 138, 138)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(157, 157, 157)
-                        .addComponent(jButton1)))
+                        .addComponent(btEntrar)))
                 .addContainerGap(110, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -81,60 +95,49 @@ public class FrameLogin extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addComponent(jLabel3)
                 .addGap(16, 16, 16)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tfUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tfSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btEntrar)
                 .addGap(28, 28, 28))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntrarActionPerformed
+        String login = tfUsuario.getText();
+        
+        String senha = tfSenha.getText();
+        
+        if(login.equals("Adm") && (senha.equals("123"))){
+            java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new FrameCliente().setVisible(true);
+            }
+        });
+        }else{
+            JOptionPane.showMessageDialog(this, "Algum dos campos está incorreto", "Atenção", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btEntrarActionPerformed
+
+    private void tfUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfUsuarioActionPerformed
+    }//GEN-LAST:event_tfUsuarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrameLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrameLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrameLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrameLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrameLogin().setVisible(true);
-            }
-        });
-    }
+ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btEntrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField tfSenha;
+    private javax.swing.JTextField tfUsuario;
     // End of variables declaration//GEN-END:variables
 }
