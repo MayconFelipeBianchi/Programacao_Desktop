@@ -218,19 +218,7 @@ public class FrameCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tfNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNomeActionPerformed
-        String nome = tfNome.getText();
-        String telefone = tfTelefone.getText();
-        String endereco = tfEndereco.getText();
-        String marca = tfMarca.getText();
-        String modelo = tfModelo.getText();
-        String ano = tfAno.getText();
-        String placa = tfPlaca.getText();
-
-        if (nome.isEmpty() || telefone.isEmpty() || endereco.isEmpty() || marca.isEmpty() || modelo.isEmpty() || ano.isEmpty() || placa.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Algum dos campos está incorreto", "Atenção", JOptionPane.ERROR_MESSAGE);
-        } else {
-            new FrameServico().setVisible(true);
-        }
+        
     }//GEN-LAST:event_tfNomeActionPerformed
 
     private void tfEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfEnderecoActionPerformed
@@ -258,7 +246,19 @@ public class FrameCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_tfPlacaActionPerformed
 
     private void SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarActionPerformed
-        // TODO add your handling code here:
+        String nome = tfNome.getText();
+        String telefone = tfTelefone.getText();
+        String endereco = tfEndereco.getText();
+        String marca = tfMarca.getText();
+        String modelo = tfModelo.getText();
+        String ano = tfAno.getText();
+        String placa = tfPlaca.getText();
+
+        if (nome.isEmpty() || telefone.isEmpty() || endereco.isEmpty() || marca.isEmpty() || modelo.isEmpty() || ano.isEmpty() || placa.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Algum dos campos está incorreto", "Atenção", JOptionPane.ERROR_MESSAGE);
+        } else {
+            new FrameServico().setVisible(true);
+        }
     }//GEN-LAST:event_SalvarActionPerformed
 
     /**
