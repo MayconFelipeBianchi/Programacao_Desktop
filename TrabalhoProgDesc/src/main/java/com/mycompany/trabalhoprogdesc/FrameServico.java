@@ -28,7 +28,7 @@ public class FrameServico extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tfDesc = new javax.swing.JTextArea();
+        taDesc = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -43,9 +43,9 @@ public class FrameServico extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setText("Serviços a serem feitos");
 
-        tfDesc.setColumns(20);
-        tfDesc.setRows(5);
-        jScrollPane1.setViewportView(tfDesc);
+        taDesc.setColumns(20);
+        taDesc.setRows(5);
+        jScrollPane1.setViewportView(taDesc);
 
         jLabel2.setText("Descrição do serviço completa:");
 
@@ -141,7 +141,9 @@ public class FrameServico extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
-        
+        String descricao = taDesc.getText();
+        String servico = tfServico.getText();
+        String valorServ = tfValorServ.getText();
     }//GEN-LAST:event_btSalvarActionPerformed
 
     private void btGuardarServActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGuardarServActionPerformed
@@ -161,7 +163,7 @@ public class FrameServico extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea tfDesc;
+    private javax.swing.JTextArea taDesc;
     private javax.swing.JTextField tfServico;
     private javax.swing.JTextField tfValorServ;
     // End of variables declaration//GEN-END:variables
